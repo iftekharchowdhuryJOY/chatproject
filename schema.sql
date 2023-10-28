@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS chattitleinfo;
+DROP TABLE IF EXISTS userinfo;
+
+CREATE TABLE chattitleinfo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    title TEXT NOT NULL,
+    user_data TEXT NOT NULL,
+    user_id INTEGER NOT NULL,
+    FOREIGN KEY(user_id) REFERENCES userinfo(user_id)
+);
+
+CREATE TABLE userinfo (
+    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_name TEXT NOT NULL,
+    Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
